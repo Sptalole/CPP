@@ -16,7 +16,8 @@ void sortBinaryArray(int a[], int n)
     }
 }
 
-// Driver code
+
+
 int main()
 {
     int a[] = { 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1,
