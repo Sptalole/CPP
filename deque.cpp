@@ -25,7 +25,7 @@ int main(){
     display(d);
     cout << "front = " << d.front() << endl;
     cout << "back = " << d.back() << endl;
-
+    cout << "d.empty() = " << d.empty() << endl;
 
 
 
