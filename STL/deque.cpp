@@ -12,6 +12,7 @@ void display(deque<int> v)
 }
 
 int main(){
+    //deque doble ended queue, here we can add the data from front and back
     deque<int> d;
     d.push_back(10);
     display(d);
