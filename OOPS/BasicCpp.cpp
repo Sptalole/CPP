@@ -1,47 +1,59 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-//creating class employee
-class Employee{
+// creating class employee
+class Employee
+{
 private:
     int age;
     string name;
-public :
-    void setAge (int a){
+
+public:
+    void setAge(int a)
+    {
         age = a;
     }
-    void setName(string n){
+    void setName(string n)
+    {
         name = n;
     }
-    int getAge(){
+    int getAge()
+    {
         return age;
     }
-    string getName(){
+    string getName()
+    {
         return name;
     }
-    Employee(){
-        cout << "default constructor called" << endl;
+    Employee()
+    {
+        cout << "Default Constructor Called" << endl;
     }
-
-
 };
-
-
 
 int main()
 {
 
-Employee e;
+    Employee e;
 
-e.setAge(20);
-e.setName("Sagar");
-//cout << "name "<< e.name << endl;
-cout << "e.age " << e.getAge() << endl;
-cout << "e.name" << e.getName() << endl;
+    e.setAge(20);
+    e.setName("Sagar");
+    // cout << "name "<< e.name << endl;
+    cout << "e.age::" << e.getAge() << endl;
+    cout << "e.name::" << e.getName() << endl;
 
-Employee e2(e);
-cout << "e2.age " << e2.getAge() << endl;
-cout << "e2.name" << e.getName() << endl;
+    Employee e2(e);
+    cout << "e2.age::" << e2.getAge() << endl;
+    cout << "e2.name::" << e.getName() << endl;
 
-return 0;
+    return 0;
 }
+
+/*OUTPUT*/
+/*
+Default Constructor Called
+e.age::20
+e.name::Sagar
+e2.age::20
+e2.name::Sagar
+*/
