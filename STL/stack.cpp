@@ -1,24 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+{
     stack<int> st;
     st.push(10);
     st.push(20);
     st.push(30);
     st.push(40);
-    
+
     // Deleting top element
     st.pop();
-    
-    while(!st.empty()) {
+
+    while (!st.empty())
+    {
         cout << st.top() << " ";
         st.pop();
     }
-    cout << "After" <<endl;
-        while(!st.empty()) {
+    cout << "After" << endl;
+    while (!st.empty())
+    {
         cout << st.top() << " ";
         st.pop();
     }
     return 0;
 }
+
+/*OUTPUT*/
+/*
+30 20 10 After
+*/
