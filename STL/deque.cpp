@@ -1,5 +1,5 @@
-#include<iostream>
-#include<deque>
+#include <iostream>
+#include <deque>
 using namespace std;
 
 void display(deque<int> v)
@@ -11,8 +11,9 @@ void display(deque<int> v)
     cout << endl;
 }
 
-int main(){
-    //deque doble ended queue, here we can add the data from front and back
+int main()
+{
+    // deque doble ended queue, here we can add the data from front and back
     deque<int> d;
     d.push_back(10);
     display(d);
@@ -27,7 +28,16 @@ int main(){
     cout << "front = " << d.front() << endl;
     cout << "back = " << d.back() << endl;
     cout << "d.empty() = " << d.empty() << endl;
-
-
-
 }
+
+/*OUTPUT*/
+/*
+10
+10 20
+10 20 30
+5 10 20 30
+3 5 10 20 30
+front = 3
+back = 30
+d.empty() = 0
+*/
