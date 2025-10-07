@@ -43,40 +43,62 @@ sagar 3.4
 #include <iostream>
 using namespace std;
 
+// Class representing a student with name and CGPA (using dynamic memory)
 class Student
 {
 public:
-    string name;
-    double *cgpaPtr;
+    string name;     // Name of the student
+    double *cgpaPtr; // Pointer to dynamically allocated CGPA
 
+    // ✅ Parameterized constructor
     Student(string name, double cgpa)
     {
         this->name = name;
-        cgpaPtr = new double;
-        *cgpaPtr = cgpa;
+        cgpaPtr = new double; // Allocate memory for CGPA
+        *cgpaPtr = cgpa;      // Store CGPA value
     }
 
-    Student(Student &orjobj)
+    // ✅ Custom copy constructor (Deep Copy)
+    // Uses const reference for safety and performance
+    Student(const Student &orjobj)
     {
         this->name = orjobj.name;
-        cgpaPtr = new double;
-        *cgpaPtr = *orjobj.cgpaPtr;
+        cgpaPtr = new double;       // Allocate separate memory
+        *cgpaPtr = *orjobj.cgpaPtr; // Copy the value pointed to
+    }
+
+    // ✅ Destructor to avoid memory leak
+    ~Student()
+    {
+        delete cgpaPtr;
     }
 };
 
 int main()
 {
+    // Create original object s1
     Student s1("sagar", 9.8);
+
+    // Create a deep copy of s1 into s2 using copy constructor
     Student s2(s1);
+
+    // Display values of both objects before modification
     cout << s1.name << " " << *s1.cgpaPtr << endl;
     cout << s2.name << " " << *s2.cgpaPtr << endl;
+
+    // Modify s2's CGPA — this should not affect s1
     *s2.cgpaPtr = 3.4;
+
+    // Display values after modification
     cout << "s1" << endl
          << s1.name << " " << *s1.cgpaPtr << endl;
+
     cout << "s2" << endl
          << s2.name << " " << *s2.cgpaPtr << endl;
+
     return 0;
 }
+
 /*Output*/
 /*
 sagar 9.8
